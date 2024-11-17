@@ -1,0 +1,102 @@
+/* General styling for the article page */
+.article-page {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: transparent;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+/* Heading style */
+.article-page h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Category styling */
+.article-page .article-category {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Image styling */
+.article-page .article-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content styling */
+.article-page .article-content {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+
+/* Author styling */
+.article-page .article-author {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+  text-align: right;
+  margin-top: 30px;
+}
+
+/* Back button styling */
+.back-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #555;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #555;
+  transform: translateY(-3px);
+}
+
+.back-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .article-page {
+    padding: 20px;
+  }
+
+  .article-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .article-page .article-category {
+    font-size: 1rem;
+  }
+
+  .article-page .article-content {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .article-page .article-author {
+    font-size: 0.9rem;
+  }
+}

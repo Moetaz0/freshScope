@@ -1,0 +1,29 @@
+
+/* Announcements styles */
+.announcements {
+    background-color: #fff; /* Background color for announcements */
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 10px 0; /* Padding for the announcements area */
+}
+
+.announcements-slider {
+    display: inline-block; /* Keep items in a line */
+    animation: slide 10s linear infinite; /* Slide animation */
+}
+
+.announcement-item {
+    display: inline-block; /* Keep items in a line */
+    padding: 0 30px; /* Spacing between items */
+    font-family: 'Roboto', sans-serif; 
+}
+
+/* Keyframes for sliding */
+@keyframes slide {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

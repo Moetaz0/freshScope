@@ -1,0 +1,192 @@
+/* General container styling */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Top section layout */
+.top-section {
+  display: flex;
+  gap: 20px;
+}
+
+/* Main article styles */
+.main-article {
+  flex: 2;
+  position: relative;
+}
+
+.main-article img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.main-article .content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+}
+
+.main-article .category {
+  color: #ff5a5f;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.main-article h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation dots */
+.navigation-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #ff5a5f;
+}
+
+/* Small articles styles */
+.small-articles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.small-article {
+  display: flex;
+  gap: 10px;
+}
+
+.small-article img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.small-article .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.small-article .category {
+  color: #ff5a5f;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.small-article h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Arts and culture section */
+.arts-culture-section {
+  margin-top: 40px;
+}
+
+.arts-culture-section h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+
+.arts-culture-articles {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.arts-culture-article {
+  flex: 1;
+  position: relative;
+}
+
+.arts-culture-article img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.arts-culture-article .content {
+  margin-top: 5px;
+}
+
+.arts-culture-article .category {
+  color: #ff5a5f;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.arts-culture-article h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 20px;
+  text-align: center;
+  margin-top: 70px;
+}
+
+/* Category header with "See All" link */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.see-all {
+  font-size: 0.9rem;
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: -10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+.see-all-arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.see-all:hover .see-all-arrow {
+  transform: translateX(5px);
+}

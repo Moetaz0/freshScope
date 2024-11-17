@@ -1,0 +1,58 @@
+.arts-culture-section {
+  margin-top: 40px;
+}
+
+.arts-culture-section h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+
+.arts-culture-articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+  gap: 100px;
+  margin-top: 10px;
+}
+
+.arts-culture-article {
+  position: relative;
+}
+
+.arts-culture-article img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.arts-culture-article .content {
+  margin-top: 5px;
+}
+
+.arts-culture-article .category {
+  color: #ff5a5f;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.arts-culture-article h4 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.footer {
+
+  background-color: #000; /* Black background for footer */
+  color: #fff; /* White text color */
+  padding: 20px; /* Padding around footer */
+  text-align: center; /* Center the footer text */
+  position: relative; /* For positioning */
+  bottom: 0; /* Align footer to bottom */
+  width: 100%; /* Full width */
+  margin-top: 70px; /* Space above footer */
+}

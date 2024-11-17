@@ -1,0 +1,22 @@
+.neon-text {
+    font-family: 'Roboto', sans-serif; /* Apply the Roboto font */
+    font-size: 3rem; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    background: linear-gradient(90deg, #000000 0%, #4e4e4e 50%, #929292 100%); /* Gradient from dark green to neon green to light green */
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* Clipping the background to text */
+    color: transparent; /* Making text transparent so gradient shows */
+    animation: neon-flicker 3s infinite alternate; /* Optional flickering effect */
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/* Neon flicker animation */
+@keyframes neon-flicker {
+    0% {
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        opacity: 0.5; /* Slightly faded */
+    }
+}

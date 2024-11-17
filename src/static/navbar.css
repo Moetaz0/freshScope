@@ -1,0 +1,119 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out items */
+  padding: 0px 10px; /* Add padding around the navbar */
+  background-color: #fff; /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  height: 80px; /* Set a fixed height for the navbar */
+}
+
+.navbar-links {
+  list-style: none; /* Remove bullet points */
+  font-size: 2rem;
+  display: flex; /* Display links in a row */
+  gap: 30px; /* Space between links */
+  margin-left: 10px; 
+}
+
+.navbar-links li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Link color */
+  font-size: 1.3rem; /* Increase font size for links */
+  position: relative; /* Position for underline animation */
+}
+
+.navbar-links li a:hover {
+  color: #333; /* Change color on hover */
+}
+
+.navbar-links li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background: black; /* Underline color */
+  bottom: -5px; /* Positioning of the underline */
+  left: 50%; /* Start from center */
+  transform: translateX(-50%); /* Center it */
+  transform-origin: center; /* Set origin for animation */
+  transition: width 0.3s ease, left 0.3s ease; /* Animation for expanding */
+  width: 0; /* Start width */
+}
+
+.navbar-links li a:hover::after {
+  width: 100%; /* Expand to full width on hover */
+  left: 50%; /* Keep it centered */
+}
+
+/* Right section styling */
+.navbar-right {
+  display: flex; /* Align items in a row */
+  align-items: center; /* Center items vertically */
+  gap: 30px; /* Space between items */
+}
+
+/* Search bar styles */
+.navbar-search {
+  position: relative; /* For icon positioning */
+}
+
+.navbar-search input {
+  padding: 10px; /* Padding for the search input */
+  border: 1px solid #ccc; /* Border for the search input */
+  border-radius: 20px; /* Rounded corners */
+  width: 200px; /* Set a width for the input */
+  transition: border-color 0.3s; /* Transition for border color */
+}
+
+.navbar-search input:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px; /* Position icon inside the input */
+  top: 50%; /* Center the icon vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  color: #aaa; /* Icon color */
+}
+
+/* Language selector styles */
+.navbar-lang {
+  margin-left: 10px; /* Space between search and language selector */
+}
+
+.lang-select {
+  padding: 10px; /* Padding for the select */
+  border: none; /* Border for the select */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 1rem; /* Font size for the select */
+  /*webkit browsers */
+  -webkit-appearance: none;
+  /*Firefox */
+  -moz-appearance: none;
+  /* modern browsers */
+  
+  border-radius: 0;
+}
+.lang-select:f{
+    border: none;
+}
+
+/* Icon styles */
+.navbar-icons {
+  display: flex; /* Display icons in a row */
+  gap: 30px; /* Space between icons */
+  font-size: 1.5rem; /* Increase size of icons */
+}
+
+.navbar-icons a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Icon color */
+}
+
+/* Underline for the navbar */
+.navbar-underline {
+  height: 2px; /* Thickness of the underline */
+  background-color: #333; /* Color of the underline */
+}
