@@ -12,7 +12,7 @@ const Tech = () => {
       try {
         const response = await axios.get("https://freshscope-bend-1.onrender.com/api/articles"); // Replace with your API URL
         const filteredArticles = response.data.filter(
-          (article) => article.categorie === "Technology" // Adjust based on your API's data structure
+          (article) => article.categorie === "Technology"&& !article.isLie // Adjust based on your API's data structure
         );
         setTechnologyArticles(filteredArticles);
       } catch (error) {

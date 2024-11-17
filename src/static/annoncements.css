@@ -9,7 +9,7 @@
 
 .announcements-slider {
     display: inline-block; /* Keep items in a line */
-    animation: slide 10s linear infinite; /* Slide animation */
+    animation: slide 20s linear infinite; /* Slide animation */
 }
 
 .announcement-item {

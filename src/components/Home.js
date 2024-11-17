@@ -8,17 +8,15 @@ const Home = () => {
   const [currentMainIndex, setCurrentMainIndex] = useState(0);
   const [mainArticles, setMainArticles] = useState([]);
   const [popularArticles, setPopularArticles] = useState([]);
-  const [smallArticles, setSmallArticles] = useState([]);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const response = await axios.get("https://freshscope-bend-1.onrender.com/api/articles"); // Replace with your API URL
-        const allArticles = response.data;
+        const allArticles = response.data.filter((article) => !article.isLie); // Exclude articles with isLie = true
 
         setMainArticles(allArticles.filter((article) => article.inSlide === true));
         setPopularArticles(allArticles.filter((article) => article.isPopular === true));
-        setSmallArticles(allArticles.slice(0, 5));
         setArticles(allArticles);
       } catch (error) {
         console.error("Error fetching articles:", error);
@@ -80,16 +78,17 @@ const Home = () => {
       {/* Other categories */}
       {["Politics", "Sports", "Technology"].map((category) => (
         <div className="arts-culture-section" key={category}>
-        <div className="category-header">
-          <h3>{category === "Politics" ? "Politics" : category === "Sports" ? "Sports" : "Technology"}</h3>
-          <Link to={`/${category}`} className="see-all">
-            See All
-            <span className="see-all-arrow">→</span>
-          </Link>
-        </div>
+          <div className="category-header">
+            <h3>{category}</h3>
+            <Link to={`/${category}`} className="see-all">
+              See All
+              <span className="see-all-arrow">→</span>
+            </Link>
+          </div>
           <div className="arts-culture-articles">
             {articles
               .filter((article) => article.categorie === category)
+              .slice(0, 6) // Limit to 6 articles
               .map((article, index) => (
                 <Link to={`/article/${article._id}`} className="arts-culture-article" key={index}>
                   <img src={article.imageUrl} alt={article.title} />

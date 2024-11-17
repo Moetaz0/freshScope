@@ -6,13 +6,13 @@ import axios from "axios";
 const AboutUs = () => {
   const [politicsArticles, setPoliticsArticles] = useState([]);
 
-  // Fetch articles with the "Politics" category
+  // Fetch articles with the "Politics" category and exclude "isLie" articles
   useEffect(() => {
     const fetchPoliticsArticles = async () => {
       try {
         const response = await axios.get("https://freshscope-bend-1.onrender.com/api/articles"); // Replace with your API URL
         const filteredArticles = response.data.filter(
-          (article) => article.categorie === "Politics" // Adjust the category key to match your API's data structure
+          (article) => article.categorie === "Politics" && !article.isLie
         );
         setPoliticsArticles(filteredArticles);
       } catch (error) {

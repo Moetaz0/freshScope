@@ -15,7 +15,7 @@ const Sports = () => {
       try {
         const response = await axios.get("https://freshscope-bend-1.onrender.com/api/articles"); // Replace with your API URL
         const filteredArticles = response.data.filter(
-          (article) => article.categorie === "Sports" // Adjust based on your API's data structure
+          (article) => article.categorie === "Sports" && !article.isLie// Adjust based on your API's data structure
         );
         setSportsArticles(filteredArticles);
       } catch (error) {
