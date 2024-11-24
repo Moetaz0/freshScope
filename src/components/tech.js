@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../static/tech.css";
 import axios from "axios";
+import LoadingComponent from "./loading";
 
 import { Link } from "react-router-dom";
 const Tech = () => {
   const [technologyArticles, setTechnologyArticles] = useState([]);
+  const [loading, setLoading] = useState(true); // State to track loading status
 
   // Fetch articles with the "Technology" category
   useEffect(() => {
@@ -17,11 +19,21 @@ const Tech = () => {
         setTechnologyArticles(filteredArticles);
       } catch (error) {
         console.error("Error fetching technology articles:", error);
+      }finally {
+        setLoading(false); // Stop loading once the fetch is complete
+        console.log("Loading set to false"); // Debug log
       }
     };
 
     fetchTechnologyArticles();
   }, []);
+
+  // Show loading spinner if still loading
+  if (loading) {
+    console.log("Rendering LoadingComponent..."); // Debug log
+    return <LoadingComponent />;
+  }
+
 
   return (
     <div className="home-container">

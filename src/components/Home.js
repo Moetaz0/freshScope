@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../static/Home.css";
+import LoadingComponent from "./loading";
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
   const [currentMainIndex, setCurrentMainIndex] = useState(0);
   const [mainArticles, setMainArticles] = useState([]);
   const [popularArticles, setPopularArticles] = useState([]);
+  const [loading, setLoading] = useState(true); // State to track loading status
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -21,6 +23,10 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching articles:", error);
       }
+      finally {
+        setLoading(false); // Stop loading once the fetch is complete
+        console.log("Loading set to false"); // Debug log
+      }
     };
 
     fetchArticles();
@@ -29,6 +35,12 @@ const Home = () => {
   const handleDotClick = (index) => {
     setCurrentMainIndex(index);
   };
+  // Show loading spinner if still loading
+  if (loading) {
+    console.log("Rendering LoadingComponent..."); // Debug log
+    return <LoadingComponent />;
+  }
+
 
   return (
     <div className="home-container">

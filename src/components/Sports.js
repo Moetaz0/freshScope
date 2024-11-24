@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../static/Sports.css";
 import axios from "axios";
-
+import LoadingComponent from "./loading";
 // Import the Link component from react-router-dom to enable navigation
 
 import { Link } from "react-router-dom";
 
 const Sports = () => {
   const [sportsArticles, setSportsArticles] = useState([]);
+  const [loading, setLoading] = useState(true); // State to track loading status
 
   // Fetch articles with the "Sports" category
   useEffect(() => {
@@ -20,11 +21,21 @@ const Sports = () => {
         setSportsArticles(filteredArticles);
       } catch (error) {
         console.error("Error fetching sports articles:", error);
+      }finally {
+        setLoading(false); // Stop loading once the fetch is complete
+        console.log("Loading set to false"); // Debug log
       }
     };
 
     fetchSportsArticles();
   }, []);
+
+  // Show loading spinner if still loading
+  if (loading) {
+    console.log("Rendering LoadingComponent..."); // Debug log
+    return <LoadingComponent />;
+  }
+
 
   return (
     <div className="home-container">

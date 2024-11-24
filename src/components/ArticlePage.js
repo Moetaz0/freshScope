@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../static/ArticlePage.css";
+import LoadingComponent from "./loading";
 
 const ArticlePage = () => {
   const { id } = useParams(); // Get the article ID from the URL
@@ -23,7 +24,7 @@ const ArticlePage = () => {
   }, [id]); // Dependency array ensures it runs when 'id' changes
 
   if (!article) {
-    return <div>Loading...</div>; // Optional loading state
+    return <LoadingComponent />; // Animated loading state
   }
 
   return (

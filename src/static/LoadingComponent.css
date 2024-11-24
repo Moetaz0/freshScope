@@ -1,0 +1,27 @@
+/* Center the loader */
+.neon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Circle loader styling */
+.circle-loader {
+  width: 80px; /* Size of the loader */
+  height: 80px;
+  border: 8px solid rgba(0, 0, 0, 0.3); /* Light border for the background */
+  border-top: 8px solid gray; /* Bright neon green border for the top */
+  border-radius: 50%; /* Make it a circle */
+  animation: spin 1s linear infinite; /* Spinning animation */
+}
+
+/* Spinning animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
