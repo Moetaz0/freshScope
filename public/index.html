@@ -21,6 +21,14 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-NBE9Z1VDZJ"
     ></script>
     <script>
+      var script = document.createElement('script');
+      script.defer = true;
+      script.dataset.domain = "freshscope.me";
+      script.dataset.api = "https://plausible.io/api/event";
+      script.src = "https://plausible.io/js/script.js";
+      document.getElementsByTagName('head')[0].appendChild(script);
+      </script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
